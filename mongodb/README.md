@@ -1,4 +1,4 @@
-# Session 2. NoSQL Databases - MongoDB Hands-on
+# Session 2. NoSQL Databases - MongoDB
 
 ## 1.	Introduction
 
