@@ -208,11 +208,53 @@ And regular expressions:
 
 	> db.photos.find({"title": /Photo/})
 
+## 7. Geospatial data
+
+The following creates a new photo with geolcation:
+
+> db.photos.insert( {
+  	  "title" : "Photo1",
+	  "dateCreated": ISODate("2020-02-01T00:00:00Z"), 
+	  location: { type: "Point", coordinates: [ -73.97, 40.77 ] }
+} );
+
+MongoDB geospatial queries can interpret geometry on a flat surface or a sphere. You need to create a geospatial index (2dsphere or 2d) before performing geospatial queries:
+
+> db.photos.createIndex( { location: "2dsphere" } )
+
+Now you can find documents that are at least 1000 meters from and at most 5000 meters from the specified point:
+
+> db.photos.find(
+{
+ location:
+   { $near:
+      {
+        $geometry: { type: "Point",  coordinates: [ -73.9667, 40.78 ] },
+        $minDistance: 1000,
+        $maxDistance: 5000
+      }
+   }
+}
+)
+
+You also can find documents that match the a query filter, sorted in order of nearest to farthest to the specified GeoJSON point:
+
+> db.photos.aggregate( [
+   {
+      $geoNear: {
+         near: { type: "Point", coordinates: [ -73.9667, 40.78 ] },
+         spherical: true,
+         query: { "title": /Photo/ },
+         distanceField: "calcDistance"
+      }
+   }
+] )
+
+## 8. Accessing MongoDB from Python code
+
 Exit the MongoDB shell
 
 	> exit
-
-## 7. Accessing MongoDB from Python code (OPTIONAL)
 
 Let's first create a local directory named "mongodbclient" in your home directory:
 
@@ -269,6 +311,7 @@ Let's extend our code to query the "photos" collection:
 	for x in mydoc:
 		print(x)
 
-## 13.	Delivery
+
+## 9.	Delivery
 
 Deliver a text file with the output of the different commands (or some screenshots within a .pdf file) through the proper section within http://atenea.upc.edu. 
