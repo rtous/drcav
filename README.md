@@ -11,9 +11,7 @@
 
 [Session 1 (SQL and Multimedia Metadata)](./mysql/README.md)
 
-[MongoDB Hands-on](./mongodb_hands_on/README.md)
-
-[Session 2 (Big Data Analytics with Spark)](./spark/README.md)
+[Session 2 (MongoDB)](./mongodb/README.md)
 
 
 
