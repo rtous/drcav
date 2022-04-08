@@ -30,17 +30,17 @@ On the Ubuntu or Mac terminal run the following to pull and run an msql-server i
 If you get an error "...ports are not available..." you can try the following:
 
 1) Check if there's already a container using the port
-
+	'''
 	docker ps -a
 	docker stop drcav
 	docker rm drcav
-
+	'''
 2) Check if there's already a mysql service running and stop it (the way to do this depends on your platform)
 
 3) Use a different port, e.g. 3307
-	'''
+	
 	docker run --name=drcav -d -p 3307:3306 mysql/mysql-server:latest
-	'''
+	
 In order to know which root password was given do (wait some seconds before):
 
 	docker logs drcav 
