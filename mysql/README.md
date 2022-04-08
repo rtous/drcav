@@ -26,6 +26,12 @@ On the Ubuntu or Mac terminal run the following to pull and run an msql-server i
 
 	docker pull mysql/mysql-server:latest
 	docker run --name=drcav -d -p 3306:3306 mysql/mysql-server:latest
+	
+In order to know which root password was given do (wait some seconds before):
+
+	docker logs drcav 
+
+And take notice of the root password. 
 
 If you get an error "...ports are not available..." you can try the following:
 
@@ -40,12 +46,10 @@ If you get an error "...ports are not available..." you can try the following:
 3) Use a different port, e.g. 3307
 	
 	docker run --name=drcav -d -p 3307:3306 mysql/mysql-server:latest
-	
-In order to know which root password was given do (wait some seconds before):
 
-	docker logs drcav 
+If you get an error ".../getImageBlob... no such file or directory" try restarting the docker daemon:
 
-And take notice of the root password. 
+	sudo systemctl restart docker
 
 
 #### Create a non-root user and a database
