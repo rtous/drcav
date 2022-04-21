@@ -220,6 +220,8 @@ MongoDB geospatial queries can interpret geometry on a flat surface or a sphere.
 
 	> db.photos.createIndex( { location: "2dsphere" } )
 
+*NOTE: For simple euclidean coordinate pairs use the 2d index. For more sophisticated GeoJSON objects or for a Earth-like sphere geometry (WGS 84) use 2dsphere.*
+
 Now you can find documents that are at least 1000 meters from and at most 5000 meters from the specified point:
 
 	> db.photos.find(
