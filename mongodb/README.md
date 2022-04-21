@@ -204,8 +204,6 @@ You can filter by date:
 
 And regular expressions:
 
-	You can filter by date:
-
 	> db.photos.find({"title": /Photo/})
 
 ## 7. Geospatial data
