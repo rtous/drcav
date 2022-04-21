@@ -342,7 +342,7 @@ Create a new collection "Users" and insert JSON documents with the following inf
 
 ### 4.2 Querying (4 points)
 
-Now, try yourself writing commands that will allow you to obtain the following results (**Write the commands in the commands.txt text file**):
+Now, try yourself writing commands that will allow you to obtain the following results (**write the commands in the commands.txt text file**):
 
 1. Show all users and their data
 
