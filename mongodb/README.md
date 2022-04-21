@@ -202,7 +202,7 @@ You can filter by date:
 
 	> db.photos.find( { dateCreated: { $gt: ISODate('2000-06-22') } } )
 
-And regular expressions:
+And [(JavaScript) regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet):
 
 	> db.photos.find({"title": /Photo/})
 
