@@ -360,6 +360,6 @@ You can copy the program to the end of the commands.txt text file.
 
 *NOTE: In Python you need to wrap with double quotes (") all field names (e.g "$near")*
 
-## 11. Delivery
+## 5. Delivery
 
 Deliver commands.txt file through the proper section within http://atenea.upc.edu. 
