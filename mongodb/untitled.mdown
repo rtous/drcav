@@ -1,0 +1,39 @@
+db.photos.insert({
+	      "title" : "photo1.jpg",
+	      "dateCreated": ISODate("2020-02-02T00:00:00Z"), 
+	      location: { type: "Point", coordinates: [ 41.38, 2.15 ],
+	      "user": "user1"
+	      }
+	   }
+	)
+db.photos.insert({
+	      "title" : "photo2.jpg",
+	      "dateCreated": ISODate("2020-02-02T00:00:00Z"), 
+	      location: { type: "Point", coordinates: [ 41.35, 2.16 ],
+	      "user": "user1"
+	      }
+	   }
+	)
+db.photos.insert({
+	      "title" : "photo3.jpg",
+	      "dateCreated": ISODate("2020-02-02T00:00:00Z"), 
+	      location: { type: "Point", coordinates: [ 40.35, 2.18 ],
+	      "user": "user1"
+	      }
+	   }
+	)
+db.photos.createIndex( { location: "2dsphere" } )
+db.photos.find(
+	{
+	 location:
+	   { $near:
+	      {
+	        $geometry: { type: "Point",  coordinates: [ 41.38, 2.15 ] },
+	        $maxDistance: 5000
+	      }
+	   }
+	}
+	)
+db.users.find({"email": /gmail/})
+
+db.users.count({"password": "1234"})

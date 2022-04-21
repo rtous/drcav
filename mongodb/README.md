@@ -25,7 +25,8 @@ Let's pull and run a MongoDB Docker container:
 
 	docker run -it --name=mongo -v $HOME/drcav:/drcav -p 27017:27017 -d mongo
 -->
-Let's pull and run a MongoDB Docker container:
+
+On the Ubuntu or Mac terminal run the following to pull and run a MongoDB Docker container:
 
 	docker run -it --name=mongo -p 27017:27017 -d mongo
 
@@ -53,7 +54,9 @@ If you enter a wrong command by mistake you can delete the container this way:
 	docker rm mongo
 -->
 
-## 3 Connecting with a client: MongoDB shell and MongoDB Compass
+## 3 MongoDB tutorial 
+
+### 3.1 Connecting with a client: MongoDB shell and MongoDB Compass
 
 MongoDB comes with a shell client. If you installed MongoDB with Docker you can execute it this way:
 
@@ -79,7 +82,7 @@ We will work on the shell, but it will be convenient to install MongoDB Compass,
 	mongodb://localhost:27017
 
 
-## 4. First commands 
+### 3.2. First commands 
 
 From the MongoDB shell, the following will inform you about the current active database:
 
@@ -95,7 +98,7 @@ you can get info about the new database this way:
 
 If you have MongoDB Compass you can check that the drcavdb database has been created.
 
-## 5. Working with collections
+###  3.3. Working with collections
 
 The following creates a new collection with one document:
 
@@ -176,7 +179,7 @@ On the shell you can remove all the documents this way:
 
 	> db.photos.remove({})
 
-## 6. Querying
+### 3.4. Querying
 
 On the shell you can query all documents and pretty print them this way:
 
@@ -206,7 +209,12 @@ And [(JavaScript) regular expressions](https://developer.mozilla.org/en-US/docs/
 
 	> db.photos.find({"title": /Photo/})
 
-## 7. Geospatial data
+You can perform aggregate operations such as count:
+
+	> db.photos.count()
+	> db.photos.count({"title": /Photo/})
+
+### 3.5. Geospatial data
 
 The following creates a new photo with geolcation:
 
@@ -250,7 +258,7 @@ You also can find documents that match the a query filter, sorted in order of ne
 	   }
 	] )
 
-## 8. Accessing MongoDB from Python code
+### 3.6. Accessing MongoDB from Python code
 
 Exit the MongoDB shell
 
@@ -311,7 +319,47 @@ Let's extend our code to query the "photos" collection:
 	for x in mydoc:
 		print(x)
 
+## 4. Lab assignment
 
-## 9.	Delivery
+### 4.1 Inserting data (4 points)
 
-Deliver a text file with the output of the different commands (or some screenshots within a .pdf file) through the proper section within http://atenea.upc.edu. 
+*NOTE: Make sure to activate the drcavdb database each time you reenter the shell, otherwise you will create things within the test database*
+
+Remove all the documents from the photos collection. Then, 
+within the photos collection, insert JSON documents that contain the following information (filename, title, description, width, height, datetime_taken, latitude, longitude, username):
+
+	"photo1.jpg", "photo 1", "winter landscape 1", 600, 400, '2019-02-02 10:10:10', 41.38, 2.15, "user1"
+	"photo2.jpg", "photo 2", "winter landscape 2", 600, 400, '2019-02-02 10:10:10', 41.35, 2.16, "user1"
+	"photo3.jpg", "photo 3", "winter landscape 3", 600, 400, '2019-02-02 10:10:10', 40.35, 2.18, "user2"
+
+Create a new collection "Users" and insert JSON documents with the following information (username, password, email):
+
+	"user1", "1234", "user1@gmail.com"
+	"user2", "1234", "user2@gmail.com"
+	"user3", "5555", "user3@upc.edu"
+
+**Write the commands in a text file named commands.txt that you will deliver to the professor.**
+
+### 4.2 Querying (4 points)
+
+Now, try yourself writing commands that will allow you to obtain the following results (**Write the commands in the commands.txt text file**):
+
+1. Show all users and their data
+
+2. Show all users with a gmail address
+
+3. Show how many users have password = "1234"
+
+4. Show photos that were taken at most 5000 meters from Barcelona (lat 41.38, long 2.15).
+
+### 4.3 Accessing MongoDB from Python code (2 points)
+
+Write a small python application prints the photos that were taken at most 5000 meters from Barcelona (lat 41.38, long 2.15).
+
+You can copy the program to the end of the commands.txt text file.
+
+*NOTE: In Python you need to wrap with double quotes (") all field names (e.g "$near")*
+
+## 11. Delivery
+
+Deliver commands.txt file through the proper section within http://atenea.upc.edu. 
