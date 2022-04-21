@@ -354,7 +354,7 @@ Now, try yourself writing commands that will allow you to obtain the following r
 
 ### 4.3 Accessing MongoDB from Python code (2 points)
 
-Write a small python application prints the photos that were taken at most 5000 meters from Barcelona (lat 41.38, long 2.15).
+Write a small python application that prints the photos that were taken at most 5000 meters from Barcelona (lat 41.38, long 2.15).
 
 You can copy the program to the end of the commands.txt text file.
 
