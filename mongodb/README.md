@@ -60,7 +60,7 @@ If you enter a wrong command by mistake you can delete the container this way:
 
 MongoDB comes with a shell client. If you installed MongoDB with Docker you can execute it this way:
 
-	docker exec -it mongo mongosh
+	docker exec -it mongo mongo
 
 <!--
 	docker exec -it mongo bash	
