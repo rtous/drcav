@@ -28,7 +28,7 @@ Let's pull and run a MongoDB Docker container:
 
 On the Ubuntu or Mac terminal run the following to pull and run a MongoDB Docker container:
 
-	docker run -it --name=mongo -p 27017:27017 -d mongo
+	docker run -it --name=mongo -p 27017:27017 -d mongo:4.4.20
 
 *NOTE: If you have problems because you already created the container see [this guide](../docker_userguide.md) to know how to stop and delete a container* 
 
@@ -60,7 +60,7 @@ If you enter a wrong command by mistake you can delete the container this way:
 
 MongoDB comes with a shell client. If you installed MongoDB with Docker you can execute it this way:
 
-	docker exec -it mongo mongo
+	docker exec -it mongo mongosh
 
 <!--
 	docker exec -it mongo bash	
