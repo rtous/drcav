@@ -70,6 +70,7 @@ Once you see the client's "mysql>" prompt type:
 	mysql>CREATE DATABASE IF NOT EXISTS drcav;
 	mysql>CREATE USER 'drcav'@'%' IDENTIFIED BY 'drcav';
 	mysql>GRANT ALL PRIVILEGES ON drcav.* to 'drcav'@'%';
+	mysql>GRANT PROCESS ON *.* to 'drcav'@'%';
 	mysql>exit;
 
 ## 3. Connecting to a MySQL server with MySQL Workbench
@@ -104,9 +105,8 @@ We have to execute:
 		username VARCHAR(100),
 		password VARCHAR(100),
 		email VARCHAR(100) UNIQUE,
-		PRIMARY KEY (username),
-		UNIQUE (email)
-	) ENGINE = INNODB;
+		PRIMARY KEY (username)
+	);
 
 *The PRIMARY KEY enforces that the field username contains unique and not null values. We also specify a UNIQUE for the email field as we want it to be an alternate key.*
 
@@ -139,7 +139,7 @@ Into the same file, below the ‘users’ CREATE, copy the following:
 		username VARCHAR(100),
 		PRIMARY KEY (filename),
 		CONSTRAINT photo_fk_1 FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
-	) ENGINE = INNODB;
+	);
 
 *The FOREIGN KEY enforces that the field username references an existing row in the users table. If you get the error 150 that means that the definition of the FOREIGN KEY is wrong (e.g. the referenced table and/or the referenced field does not exist.*
 
