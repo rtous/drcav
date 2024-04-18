@@ -30,7 +30,11 @@ On the Ubuntu or Mac terminal run the following to pull and run a MongoDB Docker
 
 	docker run -it --name=mongo -p 27017:27017 -d mongo:4.4.20
 
-*NOTE: If you have problems because you already created the container see [this guide](../docker_userguide.md) to know how to stop and delete a container* 
+If you cannot run the previous command because you already created the container just type:
+
+	docker start mongo 
+
+*NOTE: For other commands related to Docker see [this guide](../docker_userguide.md).* 
 
 <!--
 On Windows 10, if you are running Docker Desktop, use a typical Windows path, e.g.:
@@ -307,6 +311,8 @@ You also can find documents that match the a query filter, sorted in order of ne
 Exit the MongoDB shell
 
 	> exit
+
+*NOTE: From now on it is assumed that we are in a Linux-type terminal, whether it is a native one, on a Mac or one within Windows' WSL. If you were working directly in a Windows terminal you can follow the steps but you will have to adapt some of the commands.*
 
 Let's first create a local directory named "mongodbclient" in your home directory:
 
