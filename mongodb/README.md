@@ -179,6 +179,46 @@ On the shell you can remove all the documents this way:
 
 	> db.photos.remove({})
 
+Let's reinsert two documents at the same time with:
+
+	> db.photos.insertMany([ 
+	{
+	  "title" : "Photo1",
+	  "dateCreated": ISODate("2020-02-01T00:00:00Z"), 
+	  "coord" : {
+	     "lat" : -73.9557413,
+	     "long" : 40.7720266,
+	     "height" : 1439.2
+	  },
+	  "comments" : [
+	     {
+	        "author" : "User1",
+	        "comment" : "Nice photo"
+	     },
+	     {
+	        "author" : "User2",
+	        "comment" : "Like this one"
+	     }
+	  ]
+	},
+	{
+	     "title" : "Photo2",
+	     "dateCreated": ISODate("2020-02-02T00:00:00Z"), 
+	     "coord" : {
+	        "lat" : -73.9557413,
+	        "long" : 40.7720266,
+	        "height" : 1439.2
+	     },
+	     "comments" : [
+	        {
+	           "author" : "User1",
+	           "comment" : "Nice"
+	        }
+	     ]
+	}
+	])
+
+
 ### 3.4. Querying
 
 On the shell you can query all documents and pretty print them this way:
