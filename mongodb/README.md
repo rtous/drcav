@@ -256,7 +256,11 @@ You can perform aggregate operations such as count:
 
 ### 3.5. Geospatial data
 
-The following creates a new photo with geolcation:
+The way we have specified geographic coordinates in the documents inserted above does not allow us to take advantage of MongoDB's geospatial query capabilities. Let's remove all the documents:
+
+	> db.photos.remove({})
+
+Now, let's insert a new photo with geolcation the following way:
 
 	> db.photos.insert( {
 	  	  "title" : "Photo1",
