@@ -1,4 +1,6 @@
-# Session 1. SQL and Multimedia Metadata (2 hours)
+TODO
+
+# Session 1. NNS (2 hours)
 
 ## 1.	Introduction
 
@@ -11,8 +13,6 @@ MySQL is a [relational database management system (RDBMS)](https://en.wikipedia.
 ## 2. Setup
 
 Read [this](../yourmachine.md) to setup your computer first.
-
-**NOTE:**If you had trouble setting up your machine, you can do the lab using an online sandbox environment like [this](https://mysql-sandbox.nullx.me/).
 
 ### 2.1 Install MySQL Workbench
 
