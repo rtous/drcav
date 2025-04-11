@@ -9,6 +9,10 @@ This session is intended to help the student to get started with MongoDB, a NoSQ
 ### 2.1 Install a local MongoDB server with Docker
 
 *NOTE: If you don't have Docker try installing it (instructions [here](../docker.md)). If you are not able to use Docker you can install a MongoDB server following [this instructions](https://docs.mongodb.com/manual/installation/) and jump to section 3.*
+
+**NOTE: If you had trouble setting up your machine, you can do the lab using an online sandbox environment like [this](https://onecompiler.com/mongodb) or [this](https://codapi.org/mongodb/). In that case, you can directly jump to section 3.3. Note that these sandboxes do not maintain state between runs, so you will need to chain all commands together. You won't be able to do the last part (interacting with mongodb from python) with a sandbox**
+
+
 <!--
 Let's first setup a local directory to be shared with the Docker container. Let's create a "drcav" directory in your home directory. 
 
