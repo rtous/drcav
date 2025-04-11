@@ -12,7 +12,7 @@ MySQL is a [relational database management system (RDBMS)](https://en.wikipedia.
 
 Read [this](../yourmachine.md) to setup your computer first.
 
-**NOTE:**If you had trouble setting up your machine, you can do the lab using an online sandbox environment like [this](https://mysql-sandbox.nullx.me/).
+**NOTE: If you had trouble setting up your machine, you can do the lab using an online sandbox environment like [this](https://mysql-sandbox.nullx.me/).**
 
 ### 2.1 Install MySQL Workbench
 
